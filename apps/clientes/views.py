@@ -70,15 +70,13 @@ def login_usuario(request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
-            passoword = form.cleaned_data.grt('passoword')
-            usuario = authenticate(username=username, passoword=passoword)
-
+            password = form.cleaned_data.get('password')
+            usuario = authenticate(username=username, password=password)
             if usuario is not None:
                 login(request, usuario)
                 return redirect('novo_cliente')
-            
-        else:
-            return HttpResponse(request, "Usuário ou senha inválidos.")
+            else:
+                return HttpResponse(request, "Usuário ou senha inválidos.")
     else:
         form = AuthenticationForm()
 
