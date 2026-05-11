@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-rdsdw4!e%d9tlv0%e!3=)aep1oiy^o#fixd80^kivz7*uq_4sj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+LOGIN_URL = '/login/'
 
 
 # Application definition
